@@ -16,7 +16,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Xbim.Ifc;
 
 using Xbim.Ifc4.Interfaces;
@@ -29,8 +28,6 @@ namespace MantovaRocks
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		private object debug;
-
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -172,6 +169,27 @@ namespace MantovaRocks
 			txtRisultato.Text = CalcolaPreventivo(modello, listinoCaricatoDaAccess);
 		}
 
-		
+		private void OnLoad(object sender, RoutedEventArgs e)
+		{
+			DirectoryInfo d = FindData();
+			if (d!= null)
+			{
+				NomeFile.Text = Path.Combine(d.FullName, "CostDemo.ifc");
+				NomeListino.Text = Path.Combine(d.FullName, "ListinoAggiornato.xlsx");
+				NomeListinoAccess.Text = Path.Combine(d.FullName, "ListinoAccess.accdb");
+			}
+		}
+
+		private DirectoryInfo FindData()
+		{
+			DirectoryInfo d = new DirectoryInfo(".");
+			while (d != null && d.Exists)
+			{
+				if (d.EnumerateDirectories("Dati").Any())
+					return d.EnumerateDirectories("Dati").FirstOrDefault();
+				d = d.Parent;
+			}
+			return null;
+		}
 	}
 }

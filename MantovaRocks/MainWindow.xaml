@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MantovaRocks"
         mc:Ignorable="d"
-        Title="MainWindow" Height="577.681" Width="824.348">
+        Title="MainWindow" Height="577.681" Width="824.348"
+		Loaded="OnLoad"
+		>
 	<Grid>
 		<Button Content="Salutami" HorizontalAlignment="Left" Height="72" Margin="176,10,0,0" VerticalAlignment="Top" Width="235" Click="Button_Click"/>
 
