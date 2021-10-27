@@ -1,0 +1,30 @@
+﻿<Window x:Class="MantovaRocks.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MantovaRocks"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="577.681" Width="824.348">
+	<Grid>
+		<Button Content="Salutami" HorizontalAlignment="Left" Height="72" Margin="176,10,0,0" VerticalAlignment="Top" Width="235" Click="Button_Click"/>
+
+		<Label Content="Nome del file da computare:" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top"/>
+		<TextBox x:Name="NomeFile" Height="24" Margin="176,98,10.286,0" TextWrapping="Wrap" 
+				 Text="C:\Data\Unn\_Courseware\2021\Polimi - Mantova\Sources\Dati\CostDemo.ifc" 
+				 VerticalAlignment="Top"/>
+
+		<Label Content="Nome del file di listino:" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top"/>
+		<TextBox x:Name="NomeListino" Height="24" Margin="176,127,10.286,0" TextWrapping="Wrap" Text="C:\Data\Unn\_Courseware\2021\Polimi - Mantova\Sources\Dati\ListinoAggiornato.xlsx" VerticalAlignment="Top"/>
+
+		<Button Content="Fai il computo dai dati excel" HorizontalAlignment="Left" Height="35" Margin="176,156,0,0" VerticalAlignment="Top" Width="235" Click="EseguIlComputo"/>
+		
+		<Label Content="Nome del file MS Access:" HorizontalAlignment="Left" Margin="10,192,0,0" VerticalAlignment="Top"/>
+		<TextBox x:Name="NomeListinoAccess" Height="24" Margin="176,196,10,0" TextWrapping="Wrap" Text="C:\Data\Unn\_Courseware\2021\Polimi - Mantova\Sources\Dati\ListinoAccess.accdb" VerticalAlignment="Top"/>
+
+		<Button Content="Fai il computo dai dati access" HorizontalAlignment="Left" Margin="176,226,0,0" VerticalAlignment="Top" Width="235" Height="35" Click="EseguIlComputoAccess" RenderTransformOrigin="0.5,0.5" />
+
+		<TextBox VerticalScrollBarVisibility="Auto" Margin="176,267,10,19" TextWrapping="Wrap" Text="Risultato" x:Name="txtRisultato"/>
+
+	</Grid>
+</Window>
